@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"BACKEND_GO/config"
-	"BACKEND_GO/network"
+	"GOLANGSERVER/config"
+	"GOLANGSERVER/network"
 	"fmt"
 )
 

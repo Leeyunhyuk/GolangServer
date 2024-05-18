@@ -1,6 +1,7 @@
 package network
 
 import (
+	"GOLANGSERVER/types"
 	"fmt"
 	"sync"
 
@@ -39,16 +40,40 @@ func newUserRouter(router *Network) *userRouter {
 
 func (u *userRouter) create(c *gin.Context) {
 	fmt.Println("create 입니다.")
+	u.router.okResponse(c, &types.CreateUserResponse{
+		ApiResponse: types.NewApiResponse("success", 1),
+	})
 }
 
 func (u *userRouter) get(c *gin.Context) {
 	fmt.Println("get 입니다.")
+	/*
+		u.router.okResponse(c, &types.UserResponse{
+			ApiResponse: &types.ApiResponse{
+				Result:      1,
+				Description: "성공입니다.",
+			},
+			User: nil,
+		})
+	*/
+	u.router.okResponse(c, &types.GetUserResponse{
+		ApiResponse: types.NewApiResponse("success", 1),
+		User:        nil,
+	})
 }
 
 func (u *userRouter) update(c *gin.Context) {
 	fmt.Println("update 입니다.")
+
+	u.router.okResponse(c, &types.UpdateUserResponse{
+		ApiResponse: types.NewApiResponse("success", 1),
+	})
 }
 
 func (u *userRouter) delete(c *gin.Context) {
 	fmt.Println("delete 입니다.")
+
+	u.router.okResponse(c, &types.DeleteUserResponse{
+		ApiResponse: types.NewApiResponse("success", 1),
+	})
 }

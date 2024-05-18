@@ -1,4 +1,4 @@
-module BACKEND_GO
+module GOLANGSERVER
 
 go 1.21.6
 
