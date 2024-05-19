@@ -1,6 +1,7 @@
 package network
 
 import (
+	"GOLANGSERVER/service"
 	"GOLANGSERVER/types"
 	"fmt"
 	"sync"
@@ -16,9 +17,11 @@ var (
 type userRouter struct {
 	router *Network
 	//service
+
+	userService *service.User
 }
 
-func newUserRouter(router *Network) *userRouter {
+func newUserRouter(router *Network, userService *service.User) *userRouter {
 	userRouterInit.Do(func() {
 		userRouterInstance = &userRouter{
 			router: router,
